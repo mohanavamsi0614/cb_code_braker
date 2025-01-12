@@ -40,7 +40,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="relative w-screen min-h-screen bg-gray-100 flex flex-col justify-start items-center p-4">
+    <div className="relative w-screen min-h-screen bg-gray-100 overflow-x-hidden flex flex-col justify-start items-center p-4">
       <canvas id="backgroundCanvas" width={window.innerWidth} height={window.innerHeight} className="absolute top-0 left-0 h-full"></canvas>
       <div className="relative z-10 text-center mb-8 bg-white bg-opacity-75 p-6 rounded-lg mt-16 w-full max-w-4xl flex justify-center items-center flex-col shadow-lg">
         <div className="flex flex-col md:flex-row justify-center items-center">
@@ -49,14 +49,16 @@ const Home = () => {
         </div>
         <h2 className="mt-4 text-xl md:text-2xl text-gray-700">Presented By Coding Blocks KARE</h2>
         <h2 className="mt-2 text-lg md:text-xl text-gray-700">28-01-2025 <span className="text-[#E16254] font-bold">to</span> 29-01-2025</h2>
-        <button className="mt-6 px-6 py-3 md:px-8 md:py-4 bg-orange-500 text-white font-bold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300" onClick={()=>{nav("/registration")}}>Register Now!</button>
+        <button className="mt-6 px-6 py-3 md:px-8 md:py-4 bg-[#E16259] text-white font-bold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300" onClick={()=>{nav("/registration")}}>Register Now!</button>
       </div>
 
       <div className="relative z-10 text-left max-w-4xl bg-white p-6 md:p-8 rounded-lg shadow-lg mb-8">
         <h1 className="text-2xl md:text-3xl font-semibold text-[#E16254]">What is this Event about?</h1>
-        <p className="mt-4 text-lg text-gray-700 leading-relaxed">
-          The Code Breaker event includes a 2-hour workshop on Data Structures and Algorithms (DSA) to be conducted one hour before the event begins. The Code Breaker event consists of two rounds designed to evaluate participants' analytical and coding abilities. Round 1, held on January 7th, features 60 multiple-choice questions across categories like Logical Reasoning, Quantitative Aptitude, Algorithmic Thinking, and Data Interpretation, with one mark per question. Round 2, on January 8th, challenges participants with 5 coding problems (2 easy, 2 medium, 1 hard), testing their problem-solving skills and coding expertise through intricate scenarios.
-        </p>
+        <ul className="mt-4 text-lg text-gray-700 leading-relaxed list-disc list-inside">
+          <li>The event includes a 2-hour workshop on Data Structures and Algorithms (DSA) conducted one hour before the event begins.</li>
+          <li>Round 1 (January 7th): 60 multiple-choice questions covering Logical Reasoning, Quantitative Aptitude, Algorithmic Thinking, and Data Interpretation.</li>
+          <li>Round 2 (January 8th): 5 coding problems (2 easy, 2 medium, 1 hard) to test problem-solving skills and coding expertise.</li>
+        </ul>
       </div>
       <div className="relative z-10 text-left max-w-4xl bg-white p-6 md:p-8 rounded-lg shadow-lg mb-8">
         <h1 className="text-2xl md:text-3xl font-semibold text-[#E16254]">How is this Event going to be?</h1>
@@ -95,11 +97,14 @@ const Home = () => {
       </div>
       <div className="relative z-10 text-left max-w-4xl bg-white p-6 md:p-8 rounded-lg shadow-lg">
         <h1 className="text-2xl md:text-3xl font-semibold text-[#E16254]">Why is this event for you?</h1>
-        <p className="mt-4 text-lg text-gray-700 leading-relaxed">
-          This event is perfect for anyone looking to enhance their coding skills, improve their problem-solving abilities, and gain valuable experience in algorithmic reasoning. Whether you're a beginner or an experienced coder, Code Breaker offers a challenging and rewarding experience that will help you grow and succeed in the field of computer science.
-        </p>
+        <ul className="mt-4 text-lg text-gray-700 leading-relaxed list-disc list-inside">
+          <li>Enhance your coding skills.</li>
+          <li>Improve your problem-solving abilities.</li>
+          <li>Gain valuable experience in algorithmic reasoning.</li>
+          <li>Challenging and rewarding experience for both beginners and experienced coders.</li>
+        </ul>
       </div>
-      <button className="mt-6 px-6 py-3 md:px-8 md:py-4 bg-orange-500 text-white font-bold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300" onClick={()=>{nav("/registration")}}>Register Now!</button>
+      <button className="mt-6 z-10 px-6 py-3 md:px-8 md:py-4 bg-[#E16259] text-white font-bold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300" onClick={()=>{nav("/registration")}}>Register Now!</button>
 
     </div>
   );
