@@ -48,6 +48,19 @@
   z-index: 9999;
   backdrop-filter: blur(10px);
 }
+p,h1,h2,li{
+  font-family: "Poppins", serif;
+}
+
+.patrick-hand-sc-regular {
+  
+    font-family: "League Spartan", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.1px;
+}
+
 
 .modal-content {
   background-color: white;
