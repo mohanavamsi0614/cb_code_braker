@@ -67,7 +67,7 @@ function Payment() {
   }
 
   const handlePayment = () => {
-    const upiId = "6305282987@okbizaxis";
+    const upiId = "";
     const amount = "100";
     const name = "Coding Blocks";
 

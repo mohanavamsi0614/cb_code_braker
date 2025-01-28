@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
 import Nav from './Nav';
+import axios from 'axios';
+import api from './api';
 
 const defaultData = {
   name: "",
@@ -43,20 +45,27 @@ const Form = () => {
     return null;
   };
 
+  async function countfetch() {
+    try {
+      const res = await axios.get(`${api}/event/codebrake/students`);
+      return res.data.length;
+    } catch (error) {
+      console.error("Error fetching count:", error);
+      return 0;
+    }
+  }
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleSubmit = () => {
+  const handleSubmit = async() => {
     const error = validateForm();
     if (error) {
       alert(error);
       return;
     }
-    // if (department.toLowerCase() !== 'it') {
-    //   setError("Registration is now open only for IT students as all CSE slots are filled.");
-    //   return;
-    // }
+
     const formData = {
       name,
       email,
@@ -65,7 +74,13 @@ const Form = () => {
       regnum,
     };
     console.log('Collected Form Data:', formData);
-    nav("/payment", { state: formData });
+    const count = await countfetch();
+    console.log(count, "wdwejkbkj");
+    if (count < 300) {
+      nav("/payment", { state: formData });
+    } else {
+      alert("We are sorry, the registrations are closed 😔");
+    }
   };
 
   return (
@@ -99,7 +114,7 @@ const Form = () => {
             placeholder="Enter your registration number..."
             className="w-full p-3 mb-2 mt-1 text-gray-800 shadow-inner bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400"
           />
-          <label htmlFor="email" className="text-gray-800 mt-3">Email: <span className='text-red-700'>*</span></label>
+          <label htmlFor="email" className="text-gray-800 mt-3">College Email: <span className='text-red-700'>*</span></label>
           <input
             type="email"
             id="email"
