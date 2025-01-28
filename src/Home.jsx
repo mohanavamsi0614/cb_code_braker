@@ -44,7 +44,7 @@ const Home = () => {
   return (
     <div className="relative w-screen min-h-screen bg-gray-100 overflow-x-hidden flex flex-col justify-start items-center p-4">
       <canvas id="backgroundCanvas" width={window.innerWidth} height={window.innerHeight} className="absolute top-0 left-0 h-full"></canvas>
-      <Nav/>
+      {/* <Nav/> */}
       <div className="relative z-10 text-center mb-8 bg-white bg-opacity-75 p-6 rounded-lg mt-16 w-full max-w-4xl flex justify-center items-center flex-col shadow-lg">
       <div className="w-full flex justify-center items-center">
                     <img src={kalasalingam} className="size-16" alt="Kalasalingam Logo" />
