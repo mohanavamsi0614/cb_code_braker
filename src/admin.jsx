@@ -10,7 +10,7 @@ function Admin(){
     useEffect(()=>{
         const fetchData = async () => {
             try {
-              const response = await axios.get(`${api}/event/students`);
+              const response = await axios.get(`${api}/event/codebrake/students`);
               setteams(response.data);
               setCount(response.data.length);
             } catch (err) {

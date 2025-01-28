@@ -9,7 +9,7 @@ function PaymentCard({ student }) {
   async function handleVerify(id) {
     try {
       setLoading(true);
-      const response = await axios.get(`${api}/eventcodebrake/student/${id}`,);
+      const response = await axios.get(`${api}/event/codebrake/student/${id}`,);
       console.log(response.data);
       setVerified(true);
     } catch (err) {
@@ -24,11 +24,10 @@ function PaymentCard({ student }) {
     <div className="mt-6 p-6 bg-white rounded-lg shadow-lg flex justify-between items-start space-x-6 hover:shadow-2xl transition-shadow duration-300">
       <div className="w-2/3">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-          {student.name || "Team Name"}
+          Name:{student.name || "Team Name"}
         </h2>
-        
-       
-
+        <h2>Trx:{student.transactionId}</h2>
+        <h2>Upi id:{student.upiId}</h2>
         <div className="mt-4 flex items-center space-x-4">
           <button
             onClick={() => handleVerify(student._id)}

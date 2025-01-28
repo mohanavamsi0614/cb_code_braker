@@ -85,12 +85,12 @@ function Payment() {
         </Link>
       </div>
 
-      <div className="w-full max-w-md space-y-4 container p-6 border rounded bg-gray-100">
-        <h3 className="text-xl text-black">🔒Payment</h3>
+      <div className="w-full max-w-md space-y-4 container p-6 border rounded bg-gray-100 shadow-lg">
+        <h3 className="text-2xl text-black font-bold">🔒 Payment</h3>
         <p className="text-black">
           <b>Info:</b> Please scan the QR code below to make a payment for:
         </p>
-        <div className="text-black border p-4 rounded">
+        <div className="text-black border p-4 rounded bg-white shadow-sm">
           <p className="font-bold text-center">{data.teamName}</p>
           <hr />
           <p className="m-1">
