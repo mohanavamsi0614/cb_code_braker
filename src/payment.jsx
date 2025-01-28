@@ -156,8 +156,9 @@ function Payment() {
       <button
         onClick={handleSubmit}
         className="w-40 font-semibold bg-black rounded-full h-14 m-3 border text-white"
+        disabled={true}
       >
-        Submit
+        Registrations are freezed
       </button>
    
 
