@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import api from "./api"
 import axios from "axios"
+import PaymentCard from "./PaymentCard"
 function Admin(){
     const [teams,setteams]=useState([])
     const [count,setCount]=useState(0)
@@ -36,5 +37,12 @@ function Admin(){
           </div>
         );
       }
+      return(
+        <div>
+          {teams.map((i)=>(
+            <PaymentCard student={i}/>
+          ))}
+        </div>
+      )
 }
 export default Admin
