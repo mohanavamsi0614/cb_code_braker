@@ -1,15 +1,32 @@
 import axios from "axios";
 import api from "./api";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function PaymentCard({ student }) {
   const [photo, setPhoto] = useState(false);
   const [loading, setLoading] = useState(false);
   const [verified, setVerified] = useState();
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (event.target.classList.contains("popup-overlay")) {
+        setPhoto(false);
+      }
+    }
+    if (photo) {
+      document.addEventListener("click", handleClickOutside);
+    } else {
+      document.removeEventListener("click", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, [photo]);
+
   async function handleVerify(id) {
     try {
       setLoading(true);
-      const response = await axios.get(`${api}/event/codebrake/student/${id}`,);
+      const response = await axios.get(`${api}/event/codebrake/student/${id}`);
       console.log(response.data);
       setVerified(true);
     } catch (err) {
@@ -24,15 +41,15 @@ function PaymentCard({ student }) {
     <div className="mt-6 p-6 bg-white rounded-lg shadow-lg flex justify-between items-start space-x-6 hover:shadow-2xl transition-shadow duration-300">
       <div className="w-2/3">
         <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-          Name:{student.name || "Team Name"}
+          Name: {student.name || "Team Name"}
         </h2>
-        <h2>Trx:{student.transactionId}</h2>
-        <h2>Upi id:{student.upiId}</h2>
+        <h2>Trx: {student.transactionId}</h2>
+        <h2>Upi id: {student.upiId}</h2>
         <div className="mt-4 flex items-center space-x-4">
           <button
             onClick={() => handleVerify(student._id)}
             className={`px-4 py-2 rounded font-semibold text-white flex items-center space-x-2 ${
-              "bg-[#E16254] hover:bg-[#E16256] transition duration-300"
+              loading ? "bg-gray-400" : "bg-[#E16254] hover:bg-[#E16256] transition duration-300"
             }`}
           >
             {loading ? (
@@ -63,13 +80,9 @@ function PaymentCard({ student }) {
               <span>{verified ? "Verified" : "Verify"}</span>
             )}
           </button>
-
-          {verified && (
-            <span className="text-green-500 font-bold"> ✅ Verified</span>
-          )}
+          {verified && <span className="text-green-500 font-bold"> ✅ Verified</span>}
         </div>
-
-       
+      </div>
 
       <div className="w-1/3">
         {student.transactionPhotoUrl && (
@@ -82,7 +95,7 @@ function PaymentCard({ student }) {
       </div>
 
       {photo && (
-        <div className="fixed inset-0 overflow-visible flex items-center justify-center bg-gray-900 bg-opacity-75 z-50">
+        <div className="fixed inset-0 overflow-visible flex items-center justify-center bg-gray-900 bg-opacity-75 z-50 popup-overlay">
           <div className="bg-gray-700 rounded-lg p-4 relative shadow-lg max-w-lg w-full">
             <div className="flex justify-between items-center mb-4">
               <p className="text-xl font-semibold text-white text-center w-full">
@@ -95,7 +108,6 @@ function PaymentCard({ student }) {
                 X
               </button>
             </div>
-
             <div className="flex justify-center items-center">
               <img
                 src={student.transactionPhotoUrl}
@@ -106,7 +118,6 @@ function PaymentCard({ student }) {
           </div>
         </div>
       )}
-    </div>
     </div>
   );
 }
