@@ -78,7 +78,6 @@ function Payment() {
 
   return (
     <div className="flex-col items-center overflow-visible p-6 justify-center h-full flex w-full bg-white">
-      <Nav />
       <div className="w-full justify-items-start">
         <Link to="/registration">
           <button className="w-40 font-semibold bg-black rounded-full h-11 m-3 border text-white">
