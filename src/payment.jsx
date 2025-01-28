@@ -67,7 +67,7 @@ function Payment() {
   }
 
   const handlePayment = () => {
-    const upiId = "mohanavamsi14@okhdfcbank";
+    const upiId = "6281605767@superyes";
     const amount = "100";
     const name = "Coding Blocks";
 
