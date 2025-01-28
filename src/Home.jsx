@@ -109,9 +109,9 @@ const Home = () => {
       <div className="relative z-10 text-left max-w-4xl bg-white p-6 md:p-8 rounded-lg shadow-lg">
         <h1 className="text-2xl md:text-3xl font-semibold text-[#E16254] patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular">What you will get from this event?</h1>
         <div className='flex flex-col'>
-            <div className=' p-4 mb-1 border'>1st Prize: Rs 4000 + <span className="font-bold text-[#E16254]">1 credit</span></div>
-            <div className=' p-4 mb-1 border'>2nd Prize: Rs 3000 + <span className="font-bold text-[#E16254]">1 credit</span></div>
-            <div className=' p-4 mb-1 border'>3rd Prize: Rs 2000 + <span className="font-bold text-[#E16254]">1 credit</span></div>
+            <div className=' p-4 mb-1 border'>1st Prize: Rs 3000 + <span className="font-bold text-[#E16254]">1 credit</span></div>
+            <div className=' p-4 mb-1 border'>2nd Prize: Rs 2000 + <span className="font-bold text-[#E16254]">1 credit</span></div>
+            <div className=' p-4 mb-1 border'>3rd Prize: Rs 1000 + <span className="font-bold text-[#E16254]">1 credit</span></div>
             <div className=' p-4 mb-1 border'>Participation: <span className="font-bold text-[#E16254]">1 credit</span></div>
         </div>
       </div>
