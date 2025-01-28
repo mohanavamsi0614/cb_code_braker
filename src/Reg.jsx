@@ -20,6 +20,9 @@ const Form = () => {
   const [year, setYear] = useState(storedData.year || defaultData.year);
   const [department, setDepartment] = useState(storedData.department || defaultData.department);
   const [regnum, setregnum] = useState(storedData.regnum || defaultData.regnum);
+  const [hostel, setHostel] = useState(storedData.hostel || defaultData.hostel);
+  const [roomNumber, setRoomNumber] = useState(storedData.roomNumber || defaultData.roomNumber);
+
   useEffect(() => {
     const formData = {
       name,
@@ -27,10 +30,11 @@ const Form = () => {
       year,
       department,
       regnum,
-      
+      hostel,
+      roomNumber
     };
     localStorage.setItem('formData', JSON.stringify(formData));
-  }, [name, email, year, department, regnum]);
+  }, [name, email, year, department, regnum, hostel, roomNumber]);
 
   const nav = useNavigate();
 
@@ -40,6 +44,8 @@ const Form = () => {
     if (!year.trim()) return "Year is required.";
     if (!department.trim()) return "Department is required.";
     if (!regnum.trim()) return "Registration Number is required.";
+    if (!hostel.trim()) return "Hostel is required.";
+    if (!roomNumber.trim()) return "Room Number is required.";
     return null;
   };
 
@@ -53,13 +59,18 @@ const Form = () => {
       alert(error);
       return;
     }
+    if (department.toLowerCase() !== 'it') {
+      setError("Registration is now open only for IT students as all CSE slots are filled.");
+      return;
+    }
     const formData = {
       name,
       email,
       year,
       department,
       regnum,
-      
+      hostel,
+      roomNumber
     };
     console.log('Collected Form Data:', formData);
     nav("/payment", { state: formData });
@@ -123,7 +134,24 @@ const Form = () => {
             placeholder="Enter your department..."
             className="w-full p-3 mb-2 mt-1 text-gray-800 shadow-inner bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400"
           />
-         
+          <label htmlFor="hostel" className="text-gray-800 mt-3">Hostel: <span className='text-red-700'>*</span></label>
+          <input
+            type="text"
+            id="hostel"
+            value={hostel}
+            onChange={(e) => setHostel(e.target.value)}
+            placeholder="Enter your hostel..."
+            className="w-full p-3 mb-2 mt-1 text-gray-800 shadow-inner bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400"
+          />
+          <label htmlFor="roomNumber" className="text-gray-800 mt-3">Room Number: <span className='text-red-700'>*</span></label>
+          <input
+            type="text"
+            id="roomNumber"
+            value={roomNumber}
+            onChange={(e) => setRoomNumber(e.target.value)}
+            placeholder="Enter your room number..."
+            className="w-full p-3 mb-2 mt-1 text-gray-800 shadow-inner bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400"
+          />
         </div>
       </div>
       <div className="w-full flex justify-end m-3 items-center h-auto">
@@ -137,6 +165,7 @@ const Form = () => {
       {error && (
         <div className='modal-overlay'>
           <div className='modal-content flex flex-col justify-center items-center'>
+            <img src={errorlogo} className='w-16 animate-pulse' alt="Error" />
             <p className="font-semibold mb-4">Registration is now open only for <span className='text-[#E16254] font-bold'>IT</span> students as all <span className='text-[#E16254] font-bold'>CSE</span> slots are filled.</p>
             <button className='p-2 bg-[#E16254] rounded text-white' onClick={() => { nav("/") }}>Home</button>
           </div>
