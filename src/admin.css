@@ -1,0 +1,56 @@
+.admin-dashboard {
+    display: flex;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.admin-header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.admin-sidebar {
+    background-color: #333;
+    color: white;
+    width: 200px;
+    padding: 1rem;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.admin-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.admin-sidebar li {
+    margin: 1rem 0;
+}
+
+.admin-sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.admin-sidebar a:hover {
+    text-decoration: underline;
+}
+
+.admin-content {
+    flex-grow: 1;
+    padding: 2rem;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}

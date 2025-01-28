@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import kalasalingam from "/public/kalasalingam.png"
-import cb from "/public/KARE(latest).png"
+import kalasalingam from "/public/kalasalingam.png";
+import cb from "/public/KARE(latest).png";
+import Nav from './Nav';
+
 const Home = () => {
-    const nav=useNavigate()
+  const nav = useNavigate();
   useEffect(() => {
     const canvas = document.getElementById('backgroundCanvas');
     const ctx = canvas.getContext('2d');
     const dots = [];
     const numDots = 100;
-
 
     for (let i = 0; i < numDots; i++) {
       dots.push({
@@ -43,6 +44,7 @@ const Home = () => {
   return (
     <div className="relative w-screen min-h-screen bg-gray-100 overflow-x-hidden flex flex-col justify-start items-center p-4">
       <canvas id="backgroundCanvas" width={window.innerWidth} height={window.innerHeight} className="absolute top-0 left-0 h-full"></canvas>
+      <Nav/>
       <div className="relative z-10 text-center mb-8 bg-white bg-opacity-75 p-6 rounded-lg mt-16 w-full max-w-4xl flex justify-center items-center flex-col shadow-lg">
       <div className="w-full flex justify-center items-center">
                     <img src={kalasalingam} className="size-16" alt="Kalasalingam Logo" />
@@ -52,6 +54,7 @@ const Home = () => {
           <h1 className=" patrick-hand-sc-regular text-3xl md:text-5xl font-bold text-gray-800">Coding Blocks Kare</h1>
           <h1>Presentes</h1>
           <div className="text-[#E16254] patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular text-3xl md:text-5xl ml-2 font-extrabold typing patrick-hand-sc-regular ">Code Breaker</div>
+          <p className=' font-bold'><span className='text-[#E16254]'>C</span>ode,<span className='text-[#E16254]'>S</span>olve and <span className='text-[#E16254]'>C</span>onqure</p>
         </div>
         <button className="mt-6 px-6 py-3 md:px-8 md:py-4 bg-[#E16259] text-white font-bold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300" onClick={()=>{nav("/registration")}}>Register Now!</button>
       </div>
@@ -59,8 +62,8 @@ const Home = () => {
       <div className="relative z-10 text-left max-w-4xl bg-white p-6 md:p-8 rounded-lg shadow-lg mb-8">
         <h1 className="text-2xl md:text-3xl font-semibold text-[#E16254] patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular">What is this Event about?</h1>
         <ul className="mt-4 text-lg text-gray-700  list-disc ">
-          <li>Round 1 (January 7th): 60 multiple-choice questions covering Logical Reasoning, Quantitative Aptitude, Algorithmic Thinking, and Data Interpretation.</li>
-          <li>Round 2 (January 8th): 5 coding problems (2 easy, 2 medium, 1 hard) to test problem-solving skills and coding expertise.</li>
+          <li>Round 1 : 60 multiple-choice questions covering Logical Reasoning, Quantitative Aptitude, Algorithmic Thinking, and Data Interpretation.</li>
+          <li>Round 2 : 5 coding problems (2 easy, 2 medium, 1 hard) to test problem-solving skills and coding expertise.</li>
         </ul>
       </div>
       <div className="relative z-10 text-left max-w-4xl bg-white p-6 md:p-8 rounded-lg shadow-lg mb-8">
@@ -76,25 +79,25 @@ const Home = () => {
             <tbody>
               <tr>
                 <td className="border border-gray-300 p-2 md:p-4">
-                  <p>Round 1</p>
                   <p>Day 1</p>
-                  <p><span className='text-[#E16254] patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular font-bold'>Time:</span> 2:00 PM to 5:00 PM</p>
+                  <p>60 multiple-choice questions</p>
+                  {/* <p><span className='text-[#E16254] patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular font-bold'>Time:</span> 2:00 PM to 5:00 PM</p> */}
                 </td>
-                <td className="border border-gray-300 p-2 md:p-4">25</td>
+                <td className="border border-gray-300 p-2 md:p-4">50</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 p-2 md:p-4">
-                  <p>Round 2</p>
                   <p>Day 2</p>
-                  <p><span className='text-[#E16254] patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular font-bold'>Time:</span> 2:00 PM to 5:00 PM</p>
+                  <p>5 coding problems</p>
+                  {/* <p><span className='text-[#E16254] patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular font-bold'>Time:</span> 2:00 PM to 5:00 PM</p> */}
                 </td>
-                <td className="border border-gray-300 p-2 md:p-4">75</td>
+                <td className="border border-gray-300 p-2 md:p-4">50</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
-      <div className="relative z-10 text-left max-w-4xl bg-white p-6 md:p-8 rounded-lg shadow-lg">
+      <div className="relative z-10 mb-8 text-left max-w-4xl bg-white p-6 md:p-8 rounded-lg shadow-lg">
         <h1 className="text-2xl md:text-3xl font-semibold text-[#E16254] patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular">Why is this event for you?</h1>
         <ul className="mt-4 text-lg text-gray-700 leading-relaxed list-disc">
           <li>Enhance your coding skills.</li>
@@ -102,6 +105,15 @@ const Home = () => {
           <li>Gain valuable experience in algorithmic reasoning.</li>
           <li>Challenging and rewarding experience for both beginners and experienced coders.</li>
         </ul>
+      </div>
+      <div className="relative z-10 text-left max-w-4xl bg-white p-6 md:p-8 rounded-lg shadow-lg">
+        <h1 className="text-2xl md:text-3xl font-semibold text-[#E16254] patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular">What you will get from this event?</h1>
+        <div className='flex flex-col'>
+            <div className=' p-4 mb-1 border'>1st Prize: Rs 4000 + <span className="font-bold text-[#E16254]">1 credit</span></div>
+            <div className=' p-4 mb-1 border'>2nd Prize: Rs 3000 + <span className="font-bold text-[#E16254]">1 credit</span></div>
+            <div className=' p-4 mb-1 border'>3rd Prize: Rs 2000 + <span className="font-bold text-[#E16254]">1 credit</span></div>
+            <div className=' p-4 mb-1 border'>Participation: <span className="font-bold text-[#E16254]">1 credit</span></div>
+        </div>
       </div>
       <button className="mt-6 z-10 px-6 py-3 md:px-8 md:py-4 bg-[#E16259] text-white font-bold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300" onClick={()=>{nav("/registration")}}>Register Now!</button>
 

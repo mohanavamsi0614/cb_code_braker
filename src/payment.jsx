@@ -5,6 +5,7 @@ import api from "./api";
 import Modal from "./Model";
 import done from "/1cbd3594bb5e8d90924a105d4aae924c.gif";
 import qr from "/public/jaswand bro.jpg"
+import Nav from './Nav';
 
 function Payment() {
   const [upiId, setupi] = useState("");
@@ -77,6 +78,7 @@ function Payment() {
 
   return (
     <div className="flex-col items-center overflow-visible p-6 justify-center h-full flex w-full bg-white">
+      <Nav />
       <div className="w-full justify-items-start">
         <Link to="/registration">
           <button className="w-40 font-semibold bg-black rounded-full h-11 m-3 border text-white">
@@ -123,7 +125,7 @@ function Payment() {
             value={upiId}
             onChange={(e) => setupi(e.target.value)}
             placeholder="UPI ID"
-            className="w-full p-3 text-black bg-white m-0 bg-opacity-10 border-black rounded-lg  focus:ring-2 focus:ring-blue-400"
+            className="w-full p-3 border text-black bg-white m-0 bg-opacity-10 border-black rounded-lg  focus:ring-2 focus:ring-blue-400"
           />
 
           <label htmlFor="txn" className="text-black">
@@ -135,7 +137,7 @@ function Payment() {
             value={transactionId}
             onChange={(e) => settxn(e.target.value)}
             placeholder="Transaction Number"
-            className="w-full mb-2 mt-1 p-3 text-black bg-white bg-opacity-10 rounded-lg  focus:ring-2 focus:ring-blue-400"
+            className="w-full mb-2 border border-black mt-1 p-3 text-black bg-white bg-opacity-10 rounded-lg  focus:ring-2 focus:ring-blue-400"
           />
 
           <label htmlFor="transactionScreenshot" className="text-black">

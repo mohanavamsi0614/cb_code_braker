@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
+import Nav from './Nav';
 
 const defaultData = {
   name: "",
   email: "",
   year: "",
   department: "",
-  regnum:""
+  regnum: "",
+  hostel: "",
+  roomNumber: ""
 };
 
 const Form = () => {
@@ -17,6 +20,8 @@ const Form = () => {
   const [year, setYear] = useState(storedData.year || defaultData.year);
   const [department, setDepartment] = useState(storedData.department || defaultData.department);
   const [regnum, setregnum] = useState(storedData.regnum || defaultData.regnum);
+  const [hostel, setHostel] = useState(storedData.hostel || defaultData.hostel);
+  const [roomNumber, setRoomNumber] = useState(storedData.roomNumber || defaultData.roomNumber);
 
   useEffect(() => {
     const formData = {
@@ -24,10 +29,12 @@ const Form = () => {
       email,
       year,
       department,
-      regnum
+      regnum,
+      hostel,
+      roomNumber
     };
     localStorage.setItem('formData', JSON.stringify(formData));
-  }, [name, email, year, department,regnum]);
+  }, [name, email, year, department, regnum, hostel, roomNumber]);
 
   const nav = useNavigate();
 
@@ -36,7 +43,9 @@ const Form = () => {
     if (!email.trim() || !/\S+@\S+\.\S+/.test(email)) return "A valid Email is required.";
     if (!year.trim()) return "Year is required.";
     if (!department.trim()) return "Department is required.";
-    if(! regnum.trim()) return "Registration Number is Required"
+    if (!regnum.trim()) return "Registration Number is required.";
+    if (!hostel.trim()) return "Hostel is required.";
+    if (!roomNumber.trim()) return "Room Number is required.";
     return null;
   };
 
@@ -55,7 +64,9 @@ const Form = () => {
       email,
       year,
       department,
-      regnum
+      regnum,
+      hostel,
+      roomNumber
     };
     console.log('Collected Form Data:', formData);
     nav("/payment", { state: formData });
@@ -63,6 +74,7 @@ const Form = () => {
 
   return (
     <div className="flex-col items-center overflow-visible p-6 justify-center h-full flex w-full bg-white">
+      <Nav/>
       <div className="border rounded-lg h-full p-6 flex flex-col items-center max-w-lg space-y-6 w-full container bg-gray-100">
         <div className="relative p-3 w-[95%]">
           <div className="size-12 animate-bounce rounded-full bg-[#E16254] absolute top-2 left-1 p-4"></div>
@@ -81,13 +93,14 @@ const Form = () => {
             onChange={(e) => setName(e.target.value)}
             placeholder="Enter your name..."
             className="w-full p-3 mb-2 mt-1 text-gray-800 shadow-inner bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400"
-          />          <label htmlFor="regnum" className="text-gray-800">regnum: <span className='text-red-700'>*</span></label>
+          />
+          <label htmlFor="regnum" className="text-gray-800">Registration Number: <span className='text-red-700'>*</span></label>
           <input
             type="text"
             id="regnum"
             value={regnum}
             onChange={(e) => setregnum(e.target.value)}
-            placeholder="Enter your regnum..."
+            placeholder="Enter your registration number..."
             className="w-full p-3 mb-2 mt-1 text-gray-800 shadow-inner bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400"
           />
           <label htmlFor="email" className="text-gray-800 mt-3">Email: <span className='text-red-700'>*</span></label>
@@ -115,6 +128,24 @@ const Form = () => {
             value={department}
             onChange={(e) => setDepartment(e.target.value)}
             placeholder="Enter your department..."
+            className="w-full p-3 mb-2 mt-1 text-gray-800 shadow-inner bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400"
+          />
+          <label htmlFor="hostel" className="text-gray-800 mt-3">Hostel: <span className='text-red-700'>*</span></label>
+          <input
+            type="text"
+            id="hostel"
+            value={hostel}
+            onChange={(e) => setHostel(e.target.value)}
+            placeholder="Enter your hostel..."
+            className="w-full p-3 mb-2 mt-1 text-gray-800 shadow-inner bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400"
+          />
+          <label htmlFor="roomNumber" className="text-gray-800 mt-3">Room Number: <span className='text-red-700'>*</span></label>
+          <input
+            type="text"
+            id="roomNumber"
+            value={roomNumber}
+            onChange={(e) => setRoomNumber(e.target.value)}
+            placeholder="Enter your room number..."
             className="w-full p-3 mb-2 mt-1 text-gray-800 shadow-inner bg-white bg-opacity-10 backdrop-blur-md rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-400"
           />
         </div>
