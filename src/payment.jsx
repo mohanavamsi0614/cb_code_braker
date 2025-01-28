@@ -108,6 +108,7 @@ function Payment() {
           <p className="text-black">Scan Here To Pay:</p>
           <div className="w-full flex flex-col justify-center items-center">
             {/* <img src={qr} alt="QR Code for Payment" className=" w-72 object-contain" /> */}
+            <p>Registrations are freezed.</p>
             {/* <button onClick={handlePayment} className=" border border-[#E16254] p-2 mt-1 ">Click to Pay</button> */}
            <a href={qr} download="qr"><p className=" text-white bg-[#E16254] font-bold border rounded p-4 mt-2">Download</p></a> 
           </div>
