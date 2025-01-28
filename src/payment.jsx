@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import api from "./api";
 import Modal from "./Model";
 import done from "/1cbd3594bb5e8d90924a105d4aae924c.gif";
-import qr from "/public/alt.jpg"
+import qr from "/public/alt2.jpg"
 
 function Payment() {
   const [upiId, setupi] = useState("");
