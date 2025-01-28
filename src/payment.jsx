@@ -98,11 +98,11 @@ function Payment() {
             <b>Name</b>: {data.name} x 100
           </p>
           <b className="m-1">
-            Total: <i className="text-red-600 text-lg">₹150</i>
+            Total: <i className="text-red-600 text-lg">₹100</i>
           </b>
         </div>
         <p className="text-black">
-          Total of <b className="text-red-600 text-xl">₹150</b> using any UPI app. And also provide your UPI ID and
+          Total of <b className="text-red-600 text-xl">₹100</b> using any UPI app. And also provide your UPI ID and
           Transaction Number for our reference.
         </p>
         <div className="w-full flex flex-col justify-center p-4 bg-white bg-opacity-20 backdrop-blur rounded-lg shadow-md">
@@ -110,7 +110,7 @@ function Payment() {
           <div className="w-full flex flex-col justify-center items-center">
             <img src={qr} alt="QR Code for Payment" className=" w-72 object-contain" />
             {/* <button onClick={handlePayment}>Pay</button> */}
-            <p className=" text-red-600 font-bold border p-4 mt-2">Use Only Gpay</p>
+           <a href={qr} download="qr"><p className=" text-white bg-[#E16254] font-bold border rounded p-4 mt-2">Download</p></a> 
           </div>
         </div>
 

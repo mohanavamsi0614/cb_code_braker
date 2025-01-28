@@ -50,7 +50,7 @@ const Home = () => {
                     <img src={kalasalingam} className="size-16" alt="Kalasalingam Logo" />
                     <img src={cb} className=" size-16 relative ml-1 rounded-full" alt="Coding Blocks Logo" />
                 </div>
-        <div className="flex flex-col md:flex-row justify-center items-center">
+        <div className="flex flex-col  justify-center items-center">
           <h1 className=" patrick-hand-sc-regular text-3xl md:text-5xl font-bold text-gray-800">Coding Blocks Kare</h1>
           <h1>Presentes</h1>
           <div className="text-[#E16254] patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular text-3xl md:text-5xl ml-2 font-extrabold typing patrick-hand-sc-regular ">Code Breaker</div>
