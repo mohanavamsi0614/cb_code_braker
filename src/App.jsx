@@ -6,6 +6,7 @@ import { Route, Routes } from 'react-router'
 import Home from './Home'
 import Reg from './Reg'
 import Payment from './payment'
+import Admin from './admin'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -17,7 +18,7 @@ function App() {
      <Route path='/' element={<Home/>}/>
      <Route path='/registration' element={<Reg/>}/>
      <Route path='payment' element={<Payment/>}/>
-     <Route path='/admin'/>
+     <Route path='/admin' element={<Admin/>}/>
      </Routes>
     </>
   )

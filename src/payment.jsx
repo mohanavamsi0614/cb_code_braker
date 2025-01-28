@@ -4,8 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import api from "./api";
 import Modal from "./Model";
 import done from "/1cbd3594bb5e8d90924a105d4aae924c.gif";
-import qr from "/public/WhatsApp Image 2024-10-25 at 22.50.47_5fab87af.jpg"
-import Nav from './Nav';
+import qr from "/public/WhatsApp Image 2025-01-28 at 13.12.38_f2b94d0a.jpg"
 
 function Payment() {
   const [upiId, setupi] = useState("");
@@ -98,19 +97,20 @@ function Payment() {
             <b>Name</b>: {data.name} x 100
           </p>
           <b className="m-1">
-            Total: <i className="text-red-600 text-lg">₹150</i>
+            Total: <i className="text-red-600 text-lg">₹100</i>
           </b>
         </div>
         <p className="text-black">
-          Total of <b className="text-red-600 text-xl">₹150</b> using any UPI app. And also provide your UPI ID and
+          Total of <b className="text-red-600 text-xl">₹100</b> using any UPI app. And also provide your UPI ID and
           Transaction Number for our reference.
         </p>
         <div className="w-full flex flex-col justify-center p-4 bg-white bg-opacity-20 backdrop-blur rounded-lg shadow-md">
           <p className="text-black">Scan Here To Pay:</p>
           <div className="w-full flex flex-col justify-center items-center">
-            <img src={qr} alt="QR Code for Payment" className=" w-72 object-contain" />
+            <img src={qr} alt="QR Code for Payment" className=" w-72 object-contain rounded" />
+            <a href={qr} download="qr"><button className=" bg-[#E16254] rounded text-white font-bold border p-4 mt-2">Download</button></a>
             {/* <button onClick={handlePayment}>Pay</button> */}
-            <p className=" text-red-600 font-bold border p-4 mt-2">Use Only Gpay</p>
+            {/* <p className=" text-red-600 font-bold border p-4 mt-2">Use Only Gpay</p> */}
           </div>
         </div>
 
