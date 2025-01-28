@@ -53,10 +53,10 @@ const Form = () => {
       alert(error);
       return;
     }
-    if (department.toLowerCase() !== 'it') {
-      setError("Registration is now open only for IT students as all CSE slots are filled.");
-      return;
-    }
+    // if (department.toLowerCase() !== 'it') {
+    //   setError("Registration is now open only for IT students as all CSE slots are filled.");
+    //   return;
+    // }
     const formData = {
       name,
       email,
@@ -137,15 +137,7 @@ const Form = () => {
           Next
         </button>
       </div>
-      {error && (
-        <div className='modal-overlay'>
-          <div className='modal-content flex flex-col justify-center items-center'>
-            <img src={errorlogo} className='w-16 animate-pulse' alt="Error" />
-            <p className="font-semibold mb-4">Registration is now open only for <span className='text-[#E16254] font-bold'>IT</span> students as all <span className='text-[#E16254] font-bold'>CSE</span> slots are filled.</p>
-            <button className='p-2 bg-[#E16254] rounded text-white' onClick={() => { nav("/") }}>Home</button>
-          </div>
-        </div>
-      )}
+ 
     </div>
   );
 };
