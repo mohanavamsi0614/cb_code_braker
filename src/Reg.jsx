@@ -68,7 +68,7 @@ const Form = () => {
           <div className="size-12 animate-bounce rounded-full bg-[#E16254] absolute top-2 left-1 p-4"></div>
           <div className="size-12 animate-bounce rounded-full bg-gray-400 absolute bottom-1 right-1"></div>
           <div className="relative p-6 bg-white bg-opacity-20 backdrop-blur rounded-lg shadow-lg border border-gray-300 w-full text-center">
-            <h2 className="text-2xl font-bold text-gray-800">Code <span className='text-[#E16254]'>Breaker!</span> Registration Form</h2>
+            <h2 className="text-2xl font-bold text-gray-800">Registration Form</h2>
           </div>
         </div>
 
