@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import api from "./api";
 import Modal from "./Model";
 import done from "/1cbd3594bb5e8d90924a105d4aae924c.gif";
-import qr from "/public/alt2.jpg"
+import qr from "/public/alt3.jpg"
 
 function Payment() {
   const [upiId, setupi] = useState("");
@@ -67,7 +67,7 @@ function Payment() {
   }
 
   const handlePayment = () => {
-    const upiId = "6281605767@superyes";
+    const upiId = "6305282987@superyes";
     const amount = "100";
     const name = "Coding Blocks";
 
@@ -108,7 +108,7 @@ function Payment() {
           <p className="text-black">Scan Here To Pay:</p>
           <div className="w-full flex flex-col justify-center items-center">
             <img src={qr} alt="QR Code for Payment" className=" w-72 object-contain" />
-            {/* <button onClick={handlePayment}>Pay</button> */}
+            <button onClick={handlePayment}>Click to Pay</button>
            <a href={qr} download="qr"><p className=" text-white bg-[#E16254] font-bold border rounded p-4 mt-2">Download</p></a> 
           </div>
         </div>
