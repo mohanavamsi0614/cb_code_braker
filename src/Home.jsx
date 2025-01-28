@@ -79,16 +79,18 @@ const Home = () => {
             <tbody>
               <tr>
                 <td className="border border-gray-300 p-2 md:p-4">
-                  <p>Day 1</p>
-                  <p>60 multiple-choice questions</p>
+                  <p>Round 1</p>
+                  <p>Aptitude and Algorithmic Reasoning</p>
+                  <p className='  text-gray-500'>(10:00 AM to 1:00 PM)</p>
                   {/* <p><span className='text-[#E16254] patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular font-bold'>Time:</span> 2:00 PM to 5:00 PM</p> */}
                 </td>
                 <td className="border border-gray-300 p-2 md:p-4">50</td>
               </tr>
               <tr>
                 <td className="border border-gray-300 p-2 md:p-4">
-                  <p>Day 2</p>
-                  <p>5 coding problems</p>
+                  <p>Round 2</p>
+                  <p>The Algorithmic Conqueror</p>
+                  <p className='  text-gray-500'>(2:00 PM to 5:00 PM)</p>
                   {/* <p><span className='text-[#E16254] patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular font-bold'>Time:</span> 2:00 PM to 5:00 PM</p> */}
                 </td>
                 <td className="border border-gray-300 p-2 md:p-4">50</td>
