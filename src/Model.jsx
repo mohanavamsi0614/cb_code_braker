@@ -7,9 +7,9 @@ function Modal({ isLoading, children }) {
         <div className="modal-overlay ">
             <div className="modal-content flex justify-center">
                 {isLoading ? (
-                    <div className="loading-spinner">
+                    <div className="loading-spinner p-4">
                         <Loader/>
-                        loading
+                        <p className=' mt-5'>Loading...</p>
                     </div> 
                 ) : (
                     children

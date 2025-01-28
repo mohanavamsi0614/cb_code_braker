@@ -24,12 +24,12 @@ const StyledWrapper = styled.div`
   }
 
   .spinner > div {
-   background-color: rgba(0,77,255,0.2);
+   background-color: #E16254;
    height: 100%;
    position: absolute;
    width: 100%;
-   border: 2px solid #004dff;
-  }
+   border: 2px solid #ffff;
+  }d
 
   .spinner div:nth-of-type(1) {
    transform: translateZ(-22px) rotateY(180deg);
