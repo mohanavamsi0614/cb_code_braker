@@ -48,8 +48,9 @@ function PaymentCard({ student }) {
         <div className="mt-4 flex items-center space-x-4">
           <button
             onClick={() => handleVerify(student._id)}
+            disabled={verified || student.verifyed}
             className={`px-4 py-2 rounded font-semibold text-white flex items-center space-x-2 ${
-              loading ? "bg-gray-400" : "bg-[#E16254] hover:bg-[#E16256] transition duration-300"
+              loading || student.verifyed || verified ? "bg-gray-400" : "bg-[#E16254] hover:bg-[#E16256] transition duration-300"
             }`}
           >
             {loading ? (
@@ -80,7 +81,7 @@ function PaymentCard({ student }) {
               <span>{verified ? "Verified" : "Verify"}</span>
             )}
           </button>
-          {verified && <span className="text-green-500 font-bold"> ✅ Verified</span>}
+          {verified || student.verifyed && <span className="text-green-500 font-bold"> ✅ Verified</span>}
         </div>
       </div>
 
