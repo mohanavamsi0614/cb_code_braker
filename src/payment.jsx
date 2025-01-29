@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import api from "./api";
 import Modal from "./Model";
 import done from "/1cbd3594bb5e8d90924a105d4aae924c.gif";
-import qr from "/public/al5.jpg"
+import qr from "/public/og.jpg"
 import { io } from "socket.io-client";
 const socket=io(api)
 
@@ -41,7 +41,9 @@ function Payment() {
         setClose(true)
       }
     })
+
     socket.emit("check")
+
     socket.on("see",(res)=>{
       console.log(res)
       if(res=="stop"){
@@ -131,7 +133,7 @@ function Payment() {
         <div className="w-full flex flex-col justify-center p-4 bg-white bg-opacity-20 backdrop-blur rounded-lg shadow-md">
           <p className="text-black">Scan Here To Pay:</p>
           <div className="w-full flex flex-col justify-center items-center">
-            {/* <img src={qr} alt="QR Code for Payment" className=" w-72 object-contain" /> */}
+            <img src={qr} alt="QR Code for Payment" className=" w-72 object-contain" />
             {/* <button onClick={handlePayment} className=" border border-[#E16254] p-2 mt-1 ">Click to Pay</button> */}
            <a href={qr} download="qr"><p className=" text-white bg-[#E16254] font-bold border rounded p-4 mt-2">Download</p></a> 
           </div>

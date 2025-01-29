@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router';
-import Nav from './Nav';
 import axios from 'axios';
 import api from './api';
 import { io } from 'socket.io-client';
@@ -77,7 +76,7 @@ const Form = () => {
     console.log('Collected Form Data:', formData);
     const count = await countfetch();
     console.log(count, "wdwejkbkj");
-    if (count < 350) {
+    if (count < 345) {
       socket.on("reg")
       nav("/payment", { state: formData });
     } else {
