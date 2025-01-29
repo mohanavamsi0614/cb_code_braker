@@ -17,7 +17,7 @@ function App() {
      <Routes>
      <Route path='/' element={<Home/>}/>
      <Route path='/registration' element={<Reg/>}/>
-     <Route path='payment' element={<Payment/>}/>
+     {/* <Route path='payment' element={<Payment/>}/> */}
      <Route path='/admin' element={<Admin/>}/> {/* Add this line to define the admin route */}
      </Routes>
     </>
