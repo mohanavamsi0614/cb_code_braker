@@ -5,6 +5,8 @@ import api from "./api";
 import Modal from "./Model";
 import done from "/1cbd3594bb5e8d90924a105d4aae924c.gif";
 import qr from "/public/al5.jpg"
+import { io } from "socket.io-client";
+const socket=io(api)
 
 function Payment() {
   const [upiId, setupi] = useState("");
@@ -13,7 +15,8 @@ function Payment() {
   const [isDone, setisDone] = useState(false);
   const [link, setlink] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(""); 
+  const [error, setError] = useState("");
+  const [Close,setClose]=useState(false) 
   const data = useLocation().state;
   const wid = useRef();
 
@@ -33,6 +36,19 @@ function Payment() {
         }
       }
     );
+    socket.on("check",(res)=>{
+      if(res=="stop"){
+        setClose(true)
+      }
+    })
+    socket.emit("check")
+    socket.on("see",(res)=>{
+      console.log(res)
+      if(res=="stop"){
+        setClose(true)
+      }
+    })
+
     wid.current = myWidget;
   }, []);
 
@@ -75,6 +91,14 @@ function Payment() {
     window.location.href = upiUrl;
   };
 
+  if(Close){
+    return(
+      <div>
+        Registrations are closed
+      </div>
+    )
+  }
+
   return (
     <div className="flex-col items-center overflow-visible p-6 justify-center h-full flex w-full bg-white">
       <div className="w-full justify-items-start">
@@ -108,7 +132,6 @@ function Payment() {
           <p className="text-black">Scan Here To Pay:</p>
           <div className="w-full flex flex-col justify-center items-center">
             {/* <img src={qr} alt="QR Code for Payment" className=" w-72 object-contain" /> */}
-            <p>Registrations are freezed.</p>
             {/* <button onClick={handlePayment} className=" border border-[#E16254] p-2 mt-1 ">Click to Pay</button> */}
            <a href={qr} download="qr"><p className=" text-white bg-[#E16254] font-bold border rounded p-4 mt-2">Download</p></a> 
           </div>
@@ -156,9 +179,8 @@ function Payment() {
       <button
         onClick={handleSubmit}
         className="w-40 font-semibold bg-black rounded-full h-14 m-3 border text-white"
-        disabled={true}
       >
-        Registrations are freezed
+        Submit
       </button>
    
 

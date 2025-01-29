@@ -76,7 +76,7 @@ const Form = () => {
     console.log('Collected Form Data:', formData);
     const count = await countfetch();
     console.log(count, "wdwejkbkj");
-    if (count < 300) {
+    if (count < 350) {
       nav("/payment", { state: formData });
     } else {
       alert("We are sorry, the registrations are closed 😔");

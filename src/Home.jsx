@@ -56,9 +56,9 @@ const Home = () => {
           <div className="text-[#E16254] patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular patrick-hand-sc-regular text-3xl md:text-5xl ml-2 font-extrabold typing patrick-hand-sc-regular ">Code Breaker</div>
           <p className=' font-bold'><span className='text-[#E16254]'>C</span>ode,<span className='text-[#E16254]'>S</span>olve and <span className='text-[#E16254]'>C</span>onqure</p>
         </div>
-        <button className="mt-6 z-10 px-6 py-3 md:px-8 md:py-4 bg-gray-500 text-white font-bold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300" disabled={true}>Registrations Are Freezed</button>
+        {/* <button className="mt-6 z-10 px-6 py-3 md:px-8 md:py-4 bg-gray-500 text-white font-bold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300" disabled={true}>Registrations Are Freezed</button> */}
 
-        {/* <button className="mt-6 px-6 py-3 md:px-8 md:py-4 bg-[#E16259] text-white font-bold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300" onClick={()=>{nav("/registration")}}>Register Now!</button> */}
+        <button className="mt-6 px-6 py-3 md:px-8 md:py-4 bg-[#E16259] text-white font-bold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300" onClick={()=>{nav("/registration")}}>Register Now!</button>
       </div>
 
       <div className="relative z-10 text-left max-w-4xl bg-white p-6 md:p-8 rounded-lg shadow-lg mb-8">
@@ -119,8 +119,8 @@ const Home = () => {
             <div className=' p-4 mb-1 border'>Participation: <span className="font-bold text-[#E16254]">1 credit</span></div>
         </div>
       </div>
-      {/* <button className="mt-6 z-10 px-6 py-3 md:px-8 md:py-4 bg-[#E16259] text-white font-bold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300" onClick={()=>{nav("/registration")}}>Register Now!</button> */}
-      <button className="mt-6 z-10 px-6 py-3 md:px-8 md:py-4 bg-gray-500 text-white font-bold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300" disabled={true}>Registrations Are Freezed</button>
+      <button className="mt-6 z-10 px-6 py-3 md:px-8 md:py-4 bg-[#E16259] text-white font-bold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300" onClick={()=>{nav("/registration")}}>Register Now!</button>
+      {/* <button className="mt-6 z-10 px-6 py-3 md:px-8 md:py-4 bg-gray-500 text-white font-bold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300" disabled={true}>Registrations Are Freezed</button> */}
 
     </div>
   );
