@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import Nav from './Nav';
 import axios from 'axios';
 import api from './api';
+import { io } from 'socket.io-client';
 
 const defaultData = {
   name: "",
@@ -13,7 +14,7 @@ const defaultData = {
   hostel: "",
   roomNumber: ""
 };
-
+const socket=io(api)
 const Form = () => {
   const storedData = JSON.parse(localStorage.getItem("formData")) || {};
   const [error, setError] = useState("");
@@ -77,6 +78,7 @@ const Form = () => {
     const count = await countfetch();
     console.log(count, "wdwejkbkj");
     if (count < 350) {
+      socket.on("reg")
       nav("/payment", { state: formData });
     } else {
       alert("We are sorry, the registrations are closed 😔");
